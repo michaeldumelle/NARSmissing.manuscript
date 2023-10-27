@@ -1,0 +1,97 @@
+---
+title: Strategies for handling missing data caused by item nonresponse in environmental monitoring programs
+author:
+  - name: Michael Dumelle
+    email: Dumelle.Michael@epa.gov
+    affiliations: 
+        - id: epa
+          name: United States Environmental Protection Agency
+          address: 200 SW 35th St
+          city: Corvallis
+          state: Oregon
+          postal-code: 97330
+    attributes:
+        corresponding: true
+  - name: Anthony R. Olsen
+    affiliations:
+        - ref: epa
+  - name: Amanda Nahlik
+    affiliations:
+        - ref: epa
+  - name: Karen Blocksom
+    affiliations:
+        - ref: epa
+  - name: Other
+    affiliations: 
+        - id: other
+          name: Other
+abstract: |
+  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+keywords: 
+  - keyword1
+  - keyword2
+date: last-modified
+bibliography: bibliography.bib
+format:
+  elsevier-pdf:
+    keep-tex: true
+    journal:
+      name: Journal Name
+      formatting: preprint
+      model: 3p
+      cite-style: authoryear
+---
+
+# Introduction {#sec:intro}
+
+# Background {#sec:background}
+
+# Applications to National Aquatic Resource Survey Data {#sec:applications}
+
+# Discussion {#sec:discussion}
+
+# Quarto Examples
+
+Here are two sample references:  @Feynman1963118 @Dirac1953888.
+
+## Equations
+
+Here is an equation:
+$$ 
+  f_{X}(x) = \left(\frac{\alpha}{\beta}\right)
+  \left(\frac{x}{\beta}\right)^{\alpha-1}
+  e^{-\left(\frac{x}{\beta}\right)^{\alpha}}; 
+  \alpha,\beta,x > 0 .
+$$ {#eq-exeq}
+
+It is @eq-exeq.
+
+Inline equations work as well: $\sum_{i = 2}^\infty\{\alpha_i^\beta\}$
+
+## Figures and tables
+
+@fig-meaningless is generated using an R chunk.
+
+```{r}
+#| label: fig-meaningless
+#| fig-cap: A meaningless scatterplot
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+#| out-width: 50%
+#| echo: false
+plot(runif(25), runif(25))
+```
+
+## Tables coming from R
+
+Tables can also be generated using R chunks, as shown in @tbl-simple example.
+
+```{r}
+#| label: tbl-simple
+#| tbl-cap: Caption centered above table
+#| echo: true
+knitr::kable(head(mtcars)[,1:4])
+```
+
+# References {-}
