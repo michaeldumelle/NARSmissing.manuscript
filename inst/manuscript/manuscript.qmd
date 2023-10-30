@@ -44,7 +44,14 @@ format:
 
 # Introduction {#sec:intro}
 
+* Item nonresponse
+* Three types of missingness
+
 # Background {#sec:background}
+
+There are two types of item nonresponse we consider: structural and non-structural. Item nonresponse is structural when the reason that the data are missing is directly related to physical features at a site.  When structural nonresponse occurs, the data are "not missing at random", but we have information about the mechanism that causes the missingness. Item nonresponse is non-structural when the reason the data are missing is not directly related to physical features at a site. The approaches for handling structural vs non-structural item nonresponse vary drastically, so it is important the correctly identify the type of nonresponse and apply appropriate analysis techniques.
+
+Structural item nonresponse 
 
 # Applications to National Aquatic Resource Survey Data {#sec:applications}
 

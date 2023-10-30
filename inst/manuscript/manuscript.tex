@@ -251,13 +251,34 @@ tempus elit.
     keyword2
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, borderline west={3pt}{0pt}{shadecolor}, interior hidden, breakable, sharp corners, enhanced]}{\end{tcolorbox}}\fi
+    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
 
 \hypertarget{sec:intro}{%
 \section{Introduction}\label{sec:intro}}
 
+\begin{itemize}
+\tightlist
+\item
+  Item nonresponse
+\item
+  Three types of missingness
+\end{itemize}
+
 \hypertarget{sec:background}{%
 \section{Background}\label{sec:background}}
+
+There are two types of item nonresponse we consider: structural and
+non-structural. Item nonresponse is structural when the reason that the
+data are missing is directly related to physical features at a site.
+When structural nonresponse occurs, the data are ``not missing at
+random'', but we have information about the mechanism that causes the
+missingness. Item nonresponse is non-structural when the reason the data
+are missing is not directly related to physical features at a site. The
+approaches for handling structural vs non-structural item nonresponse
+vary drastically, so it is important the correctly identify the type of
+nonresponse and apply appropriate analysis techniques.
+
+Structural item nonresponse
 
 \hypertarget{sec:applications}{%
 \section{Applications to National Aquatic Resource Survey
