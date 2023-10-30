@@ -251,7 +251,7 @@ tempus elit.
     keyword2
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, interior hidden, frame hidden]}{\end{tcolorbox}}\fi
+    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, frame hidden, sharp corners, enhanced, boxrule=0pt, breakable, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \hypertarget{sec:intro}{%
 \section{Introduction}\label{sec:intro}}
@@ -260,9 +260,28 @@ tempus elit.
 \tightlist
 \item
   Item nonresponse
-\item
-  Three types of missingness
 \end{itemize}
+
+\citet{rubin1976inference} categorizes missing data into three distinct
+types: missing completely at random (MCAR), missing at random (MAR), and
+missing not at random (MNAR). Data are MCAR if the probability of
+missingness is the same for each observation. Data are MAR if the
+probability of missingness is the same for each observation belonging to
+a group defined by the observed data. Data are MNAR if the probability
+of missingness is related to the data. Suppose a researcher is using a
+remote sensor to track daily the proportion of lake area covered by
+algae. Occasionally, the remote sensor malfunctions and data cannot be
+collected. If the probability that the remote sensor malfunctions is
+completely random and the same for each day, the lake algae data are
+MCAR. Suppose that the remote sensor malfunctions more often on cloudy
+days than sunny days, but the researcher knows whether each day is sunny
+or cloudy. The lake algae data are MAR if the probability the remote
+sensor malfunctions is 1) the same for all cloudy days and 2) the same
+for all sunny days. Now suppose that the remote sensor malfunctions more
+often on humid days than non-humid days, but the researcher does not
+have access to humidity status for each day. Because the probability the
+remote sensor malfunctions is related to humidity status, which cannot
+be observed, the data are MNAR.
 
 \hypertarget{sec:background}{%
 \section{Background}\label{sec:background}}
@@ -280,6 +299,42 @@ nonresponse and apply appropriate analysis techniques.
 
 Structural item nonresponse
 
+This is a citation \citep{rubin1996multiple}
+
+A straightforward approach to handling missing data is complete case
+analysis, sometimes called listwise deletion. Complete case analysis
+involves removing all observations from the data that have missingness
+in at least one variable. There are several benefits to complete case
+analysis. Complete case analysis is intuitive and computationally
+simple. When the data are MCAR, complete case analysis yields unbiased
+estimates of means \citep{little2019statistical}. Unfortunately, there
+are also some drawbacks to complete case analysis. Complete case
+analysis is inefficient and can lead to a significant loss of valuable
+information. Consider a scenario where 100 variables are measured for
+100 observations. Suppose that each observation is missing data for only
+one variable, and that each observation is missing data for a different
+variable. Though 99\% of the data are observed, complete case analysis
+would throw out every observation, resulting in no usable data.
+Additionally, complete case analysis yields biased mean estimates when
+the data are not MCAR
+\citep{little1992regression, schafer2002missing, rubin2004multiple, donders2006gentle, white2010bias, little2019statistical}.
+In spite of these drawbacks, complete case analysis is commonly used.
+
+In single imputation, missing data are first replaced via some
+imputation method. Then this single set of data (which no longer has
+missingness) is analyzed as if it were actually observed without
+missingness. Unconditional mean imputation involves replacing missing
+values of a variable with the mean of the variable in the observed data.
+Conditional mean imputation involves replacing missing values of a
+variable with the mean of the variable in the observed data conditional
+on some auxiliary variable. Consider a field experiment measuring
+nitrogen content in soil after exposure to a control or treatment group.
+Unconditional mean imputation replaces missing data by the average
+nitrogen content, regardless of whether the missingness occurred in the
+control or treatment group. Conditional mean imputation replaces missing
+data by the average nitrogen content within each group (treatment or
+control).
+
 \hypertarget{sec:applications}{%
 \section{Applications to National Aquatic Resource Survey
 Data}\label{sec:applications}}
@@ -289,9 +344,6 @@ Data}\label{sec:applications}}
 
 \hypertarget{quarto-examples}{%
 \section{Quarto Examples}\label{quarto-examples}}
-
-Here are two sample references: \citet{Feynman1963118}
-\citet{Dirac1953888}.
 
 \hypertarget{equations}{%
 \subsection{Equations}\label{equations}}
